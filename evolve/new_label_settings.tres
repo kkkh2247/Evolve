@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b8ojprs3hjv6j"]
+
+[ext_resource type="FontFile" uid="uid://b01e88ny7ttuf" path="res://Pixeled.ttf" id="1_lstam"]
+
+[resource]
+line_spacing = -40.295
+font = ExtResource("1_lstam")
+font_size = 31
+outline_size = 10
+outline_color = Color(0.372549, 0.596078, 0.686275, 1)

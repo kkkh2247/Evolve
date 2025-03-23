@@ -1,0 +1,63 @@
+[gd_scene load_steps=15 format=3 uid="uid://dsa67qhor5i4w"]
+
+[ext_resource type="Script" path="res://LoadingData.cs" id="1_5e5rx"]
+[ext_resource type="Texture2D" uid="uid://20vw10qyun5u" path="res://Logo/Logo.png" id="1_iag6j"]
+[ext_resource type="FontFile" uid="uid://b01e88ny7ttuf" path="res://Pixeled.ttf" id="2_w1jw2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wytx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7caxl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfxdw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0llkb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xxf6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ox6jd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_157xr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oru78"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3v7vh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lggkt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qf1ba"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5e5rx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Logo" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("1_iag6j")
+centered = false
+
+[node name="Button2" type="Button" parent="CanvasLayer/Logo"]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+offset_left = 208.5
+offset_top = 125.0
+offset_right = 514.5
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_w1jw2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2wytx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7caxl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rfxdw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0llkb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7xxf6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ox6jd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_157xr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_oru78")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3v7vh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lggkt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qf1ba")
+text = "Loading"

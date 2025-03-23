@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://kacqhy3hwwwp"
+
+[deps]
+
+files=["res://CSV/Quests.Quest.translation", "res://CSV/Quests.Start.translation", "res://CSV/Quests.Description_ID.translation", "res://CSV/Quests.Condition.translation", "res://CSV/Quests.TurnIn.translation", "res://CSV/Quests.Rewards.translation"]
+
+source_file="res://CSV/Quests.csv"
+dest_files=["res://CSV/Quests.Quest.translation", "res://CSV/Quests.Start.translation", "res://CSV/Quests.Description_ID.translation", "res://CSV/Quests.Condition.translation", "res://CSV/Quests.TurnIn.translation", "res://CSV/Quests.Rewards.translation"]
+
+[params]
+
+compress=true
+delimiter=0

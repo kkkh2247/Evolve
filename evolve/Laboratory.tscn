@@ -1,0 +1,157 @@
+[gd_scene load_steps=18 format=3 uid="uid://c476bgli54rly"]
+
+[ext_resource type="Texture2D" uid="uid://bb061ur6mvq6j" path="res://background.png" id="1_m6dtk"]
+[ext_resource type="Script" path="res://Tutorial.cs" id="1_x4fqh"]
+[ext_resource type="Texture2D" uid="uid://da812s3d5qdg0" path="res://Menu.png" id="2_y4v1l"]
+[ext_resource type="Texture2D" uid="uid://c7k6ieyscmw7w" path="res://실험실/desk.png" id="3_u66dg"]
+[ext_resource type="Texture2D" uid="uid://bd3g3bfpdlftg" path="res://실험실/실린더.png" id="4_fuge2"]
+[ext_resource type="Texture2D" uid="uid://cj0xw62x8e12j" path="res://실험실/door.png" id="5_7n1y2"]
+[ext_resource type="Texture2D" uid="uid://dp6nspyj7paoi" path="res://실험실/Map.png" id="6_sliti"]
+[ext_resource type="Texture2D" uid="uid://bsnr31rg2njeh" path="res://실험실/potion.png" id="7_psjwo"]
+[ext_resource type="Texture2D" uid="uid://d1x156v2ciil4" path="res://실험실/box.png" id="8_ekn2u"]
+[ext_resource type="Texture2D" uid="uid://d4cjob7obx02n" path="res://실험실/doctor.png" id="9_61ro7"]
+[ext_resource type="Texture2D" uid="uid://faqpsbx3fteo" path="res://실험실/baby.png" id="10_2wnu1"]
+[ext_resource type="Script" path="res://NPC.cs" id="11_j4o5r"]
+[ext_resource type="Texture2D" uid="uid://ce61q335rf3rl" path="res://baby1.png" id="11_r64e6"]
+[ext_resource type="Texture2D" uid="uid://lkuffd004mmn" path="res://baby3.png" id="12_6hv7j"]
+[ext_resource type="Script" path="res://실험실/BackgroundAnimation.cs" id="13_74rkt"]
+[ext_resource type="LabelSettings" uid="uid://b8ojprs3hjv6j" path="res://new_label_settings.tres" id="14_62qbb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4l71"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2wnu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r64e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6hv7j")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_x4fqh")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_m6dtk")
+centered = false
+
+[node name="Menu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 580)
+scale = Vector2(2, 2)
+texture = ExtResource("2_y4v1l")
+centered = false
+
+[node name="Desk" type="Sprite2D" parent="."]
+position = Vector2(0, 515)
+scale = Vector2(2, 2)
+texture = ExtResource("3_u66dg")
+centered = false
+
+[node name="실린더" type="Sprite2D" parent="."]
+position = Vector2(225, 113)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fuge2")
+centered = false
+
+[node name="실린더2" type="Sprite2D" parent="."]
+position = Vector2(70, 143)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fuge2")
+centered = false
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(1143, 137)
+scale = Vector2(2, 2)
+texture = ExtResource("5_7n1y2")
+centered = false
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(417, 63)
+scale = Vector2(2, 2)
+texture = ExtResource("6_sliti")
+centered = false
+
+[node name="Potion" type="Sprite2D" parent="."]
+position = Vector2(1067, 517)
+scale = Vector2(2, 2)
+texture = ExtResource("7_psjwo")
+centered = false
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(65, 441)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ekn2u")
+centered = false
+
+[node name="Doctor" type="Sprite2D" parent="."]
+position = Vector2(535, 289)
+scale = Vector2(2, 2)
+texture = ExtResource("9_61ro7")
+centered = false
+script = ExtResource("11_j4o5r")
+
+[node name="실린더3" type="Sprite2D" parent="."]
+position = Vector2(895, 104)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fuge2")
+centered = false
+
+[node name="tadpole0" type="AnimatedSprite2D" parent="."]
+position = Vector2(129, 250)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_v4l71")
+animation = &"Idle"
+speed_scale = 0.5
+
+[node name="tadpole1" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("animatedSprite")]
+position = Vector2(286, 225)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_v4l71")
+animation = &"Idle"
+speed_scale = 0.5
+flip_h = true
+script = ExtResource("13_74rkt")
+animatedSprite = NodePath(".")
+animationSpeed = 2.0
+
+[node name="tadpole2" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("animatedSprite")]
+position = Vector2(954, 225)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_v4l71")
+animation = &"Idle"
+speed_scale = 0.5
+script = ExtResource("13_74rkt")
+animatedSprite = NodePath(".")
+animationSpeed = 1.0
+
+[node name="MainMenu" type="PanelContainer" parent="."]
+visible = false
+offset_left = 340.0
+offset_top = 604.0
+offset_right = 940.0
+offset_bottom = 686.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "텍스트출력"
+label_settings = ExtResource("14_62qbb")
+horizontal_alignment = 1
+vertical_alignment = 1

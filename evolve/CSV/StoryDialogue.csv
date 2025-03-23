@@ -1,0 +1,6 @@
+ID,Type,Character,Portrait,Dialogue,Condition,Next ID,If True Next ID,If False Next ID,SFX,BGM,Animation
+100,TEXT,NPC A,npc_a.png,이 마을은 평화롭지.,,101,,,,,fade_in
+101,CHOICE,NPC A,npc_a.png,비밀 조직에 대해 알고 있나?,플래그_가입,,102,103,,,
+102,TEXT,NPC A,npc_a.png,우리 조직에 온 걸 환영하지!,,104,,,,,
+103,TEXT,NPC A,npc_a.png,너는 아직 모르는구나.,,105,,,,,
+200,ACTION,-,,,,,201,,,,

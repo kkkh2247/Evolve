@@ -1,0 +1,61 @@
+[gd_scene load_steps=15 format=3 uid="uid://bg5sk040swn6t"]
+
+[ext_resource type="Script" path="res://Intro.cs" id="1_cd4mo"]
+[ext_resource type="Texture2D" uid="uid://20vw10qyun5u" path="res://Logo/Logo.png" id="1_l11xl"]
+[ext_resource type="FontFile" uid="uid://b01e88ny7ttuf" path="res://Pixeled.ttf" id="2_u5pf5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85qmf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfjon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m4k6v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ix0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwv5m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4iitt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tai4q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6v3p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmujm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gys5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gcwn"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cd4mo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Logo" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_l11xl")
+centered = false
+
+[node name="Button2" type="Button" parent="CanvasLayer/Logo"]
+custom_minimum_size = Vector2(300, 0)
+offset_left = 208.5
+offset_top = 125.0
+offset_right = 514.5
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_u5pf5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_85qmf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jfjon")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m4k6v")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2ix0m")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uwv5m")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4iitt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tai4q")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_l6v3p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hmujm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_3gys5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3gcwn")
+text = "Project Ron "

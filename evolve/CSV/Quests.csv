@@ -1,0 +1,2 @@
+Quest_ID,Quest_Type,Start_NPC,Description_ID,Condition,TurnIn_NPC,Rewards
+1,Talk,테스트,101,Talk,테스트,COLLECT Gold 100 1

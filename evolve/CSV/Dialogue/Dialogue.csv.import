@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bteo88m3slqit"
+
+[deps]
+
+files=["res://CSV/Dialogue/Dialogue.Type.translation", "res://CSV/Dialogue/Dialogue.Character.translation", "res://CSV/Dialogue/Dialogue.Portrait.translation", "res://CSV/Dialogue/Dialogue.Dialogue.translation", "res://CSV/Dialogue/Dialogue.Condition.translation", "res://CSV/Dialogue/Dialogue.NextID.translation", "res://CSV/Dialogue/Dialogue.NextID.translation", "res://CSV/Dialogue/Dialogue.NextID.translation", "res://CSV/Dialogue/Dialogue.Background.translation", "res://CSV/Dialogue/Dialogue.SFX.translation", "res://CSV/Dialogue/Dialogue.BGM.translation", "res://CSV/Dialogue/Dialogue.EffectScene.translation"]
+
+source_file="res://CSV/Dialogue/Dialogue.csv"
+dest_files=["res://CSV/Dialogue/Dialogue.Type.translation", "res://CSV/Dialogue/Dialogue.Character.translation", "res://CSV/Dialogue/Dialogue.Portrait.translation", "res://CSV/Dialogue/Dialogue.Dialogue.translation", "res://CSV/Dialogue/Dialogue.Condition.translation", "res://CSV/Dialogue/Dialogue.NextID.translation", "res://CSV/Dialogue/Dialogue.NextID.translation", "res://CSV/Dialogue/Dialogue.NextID.translation", "res://CSV/Dialogue/Dialogue.Background.translation", "res://CSV/Dialogue/Dialogue.SFX.translation", "res://CSV/Dialogue/Dialogue.BGM.translation", "res://CSV/Dialogue/Dialogue.EffectScene.translation"]
+
+[params]
+
+compress=true
+delimiter=0

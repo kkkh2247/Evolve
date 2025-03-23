@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cycsn36655hqo"
+
+[deps]
+
+files=["res://CSV/QuestDescriptions.Questname.translation", "res://CSV/QuestDescriptions.Questdescription.translation"]
+
+source_file="res://CSV/QuestDescriptions.csv"
+dest_files=["res://CSV/QuestDescriptions.Questname.translation", "res://CSV/QuestDescriptions.Questdescription.translation"]
+
+[params]
+
+compress=true
+delimiter=0

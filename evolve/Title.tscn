@@ -1,0 +1,590 @@
+[gd_scene load_steps=32 format=3 uid="uid://ou2p5dpnfmqw"]
+
+[ext_resource type="Texture2D" uid="uid://bb061ur6mvq6j" path="res://background.png" id="1_gfu0c"]
+[ext_resource type="Script" path="res://Title.cs" id="1_glbb5"]
+[ext_resource type="Texture2D" uid="uid://da812s3d5qdg0" path="res://Menu.png" id="2_ieru8"]
+[ext_resource type="Texture2D" uid="uid://c7k6ieyscmw7w" path="res://실험실/desk.png" id="3_1txnm"]
+[ext_resource type="Texture2D" uid="uid://ljrald21h1w1" path="res://Close_Button.png" id="3_d0kt3"]
+[ext_resource type="Texture2D" uid="uid://bd3g3bfpdlftg" path="res://실험실/실린더.png" id="4_ssgnb"]
+[ext_resource type="Texture2D" uid="uid://faqpsbx3fteo" path="res://실험실/baby.png" id="5_jxgmt"]
+[ext_resource type="Texture2D" uid="uid://cj0xw62x8e12j" path="res://실험실/door.png" id="6_5uwws"]
+[ext_resource type="Texture2D" uid="uid://dp6nspyj7paoi" path="res://실험실/Map.png" id="7_wxunm"]
+[ext_resource type="Texture2D" uid="uid://bsnr31rg2njeh" path="res://실험실/potion.png" id="8_6y3c0"]
+[ext_resource type="Texture2D" uid="uid://d1x156v2ciil4" path="res://실험실/box.png" id="9_vc58f"]
+[ext_resource type="Texture2D" uid="uid://d4cjob7obx02n" path="res://실험실/doctor.png" id="10_mpxfd"]
+[ext_resource type="FontFile" uid="uid://b01e88ny7ttuf" path="res://Pixeled.ttf" id="12_xsqor"]
+[ext_resource type="Script" path="res://GameTimer.cs" id="13_vvcre"]
+[ext_resource type="Texture2D" uid="uid://ce61q335rf3rl" path="res://baby1.png" id="14_vd7i6"]
+[ext_resource type="Script" path="res://실험실/BackgroundAnimation.cs" id="15_f1sis"]
+[ext_resource type="Texture2D" uid="uid://lkuffd004mmn" path="res://baby3.png" id="15_rkm3g"]
+[ext_resource type="LabelSettings" uid="uid://b8ojprs3hjv6j" path="res://new_label_settings.tres" id="17_kjajn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_myp1g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6kkij"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hy67n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asy7c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtm8f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_llji7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1yov"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwc2m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ikn6a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1p1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pqpt4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_djbve"]
+font = ExtResource("12_xsqor")
+font_size = 30
+outline_size = 3
+outline_color = Color(0.159418, 0.535595, 0.844476, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ha33c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jxgmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vd7i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rkm3g")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("TitleMenu_UI", "LoadCharacterData_UI", "SetCaracterName_UI", "GameStartBtn", "SelectSlotBtn", "NameCheckBtn", "PlayerNameEdit", "PlayerNameText")]
+script = ExtResource("1_glbb5")
+TitleMenu_UI = NodePath("CanvasLayer/TitleMenu")
+LoadCharacterData_UI = NodePath("CanvasLayer/GameSelectMenu")
+SetCaracterName_UI = NodePath("CanvasLayer/SetCaracterName")
+GameStartBtn = NodePath("CanvasLayer/TitleMenu/VBoxContainer/GameStartBtn")
+SelectSlotBtn = NodePath("CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer/StartBtn0")
+NameCheckBtn = NodePath("CanvasLayer/SetCaracterName/VBoxContainer/HBoxContainer3/Button3")
+PlayerNameEdit = NodePath("CanvasLayer/SetCaracterName/VBoxContainer/HBoxContainer3/LineEdit")
+PlayerNameText = NodePath("CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer/NameText0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleMenu" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 340.0
+offset_top = 100.0
+offset_right = 940.0
+offset_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TitleMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameStartBtn" type="Button" parent="CanvasLayer/TitleMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "게임시작"
+
+[node name="Button3" type="Button" parent="CanvasLayer/TitleMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "게임설정"
+
+[node name="Button4" type="Button" parent="CanvasLayer/TitleMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "끝내기"
+
+[node name="GameSelectMenu" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 340.0
+offset_top = 100.0
+offset_right = 940.0
+offset_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameSelectMenu"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GameSelectMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="NameText0" type="Label" parent="CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "처음부터"
+label_settings = SubResource("LabelSettings_djbve")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartBtn0" type="Button" parent="CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "시작"
+
+[node name="DeleteBtn0" type="Button" parent="CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "삭제"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/GameSelectMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "이미지"
+
+[node name="Button3" type="Button" parent="CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "시작"
+
+[node name="Button4" type="Button" parent="CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "삭제"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/GameSelectMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "이미지"
+
+[node name="Button3" type="Button" parent="CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "시작"
+
+[node name="Button4" type="Button" parent="CanvasLayer/GameSelectMenu/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "삭제"
+
+[node name="CloseButton" type="Sprite2D" parent="CanvasLayer/GameSelectMenu"]
+position = Vector2(599.57, 9.305)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_d0kt3")
+
+[node name="SetCaracterName" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 340.0
+offset_top = 250.0
+offset_right = 940.0
+offset_bottom = 350.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SetCaracterName"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/SetCaracterName/VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/SetCaracterName/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="CanvasLayer/SetCaracterName/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "확인"
+
+[node name="CloseButton" type="Sprite2D" parent="CanvasLayer/SetCaracterName"]
+position = Vector2(599.57, 9.305)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_d0kt3")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_gfu0c")
+centered = false
+
+[node name="Menu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 580)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ieru8")
+centered = false
+
+[node name="Desk" type="Sprite2D" parent="."]
+position = Vector2(0, 515)
+scale = Vector2(2, 2)
+texture = ExtResource("3_1txnm")
+centered = false
+
+[node name="실린더" type="Sprite2D" parent="."]
+position = Vector2(225, 113)
+scale = Vector2(2, 2)
+texture = ExtResource("4_ssgnb")
+centered = false
+
+[node name="실린더2" type="Sprite2D" parent="."]
+position = Vector2(70, 143)
+scale = Vector2(2, 2)
+texture = ExtResource("4_ssgnb")
+centered = false
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(1143, 137)
+scale = Vector2(2, 2)
+texture = ExtResource("6_5uwws")
+centered = false
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(417, 63)
+scale = Vector2(2, 2)
+texture = ExtResource("7_wxunm")
+centered = false
+
+[node name="Potion" type="Sprite2D" parent="."]
+position = Vector2(1067, 517)
+scale = Vector2(2, 2)
+texture = ExtResource("8_6y3c0")
+centered = false
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(65, 441)
+scale = Vector2(2, 2)
+texture = ExtResource("9_vc58f")
+centered = false
+
+[node name="Doctor" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(535, 289)
+scale = Vector2(2, 2)
+texture = ExtResource("10_mpxfd")
+centered = false
+
+[node name="실린더3" type="Sprite2D" parent="."]
+position = Vector2(895, 104)
+scale = Vector2(2, 2)
+texture = ExtResource("4_ssgnb")
+centered = false
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 1281.0
+offset_bottom = 726.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "Press the any key"
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = 534.0
+offset_top = 417.0
+offset_right = 746.0
+offset_bottom = 473.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.257563, 0.523881, 0.632305, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_xsqor")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_myp1g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6kkij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hy67n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asy7c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vtm8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_llji7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1yov")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwc2m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ikn6a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_w1p1j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqpt4")
+text = "Exit"
+
+[node name="tadpole0" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("animatedSprite")]
+position = Vector2(129, 250)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ha33c")
+animation = &"Idle"
+frame = 2
+frame_progress = 0.357389
+speed_scale = 0.5
+script = ExtResource("15_f1sis")
+animatedSprite = NodePath(".")
+animationSpeed = 0.5
+
+[node name="tadpole1" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("animatedSprite")]
+position = Vector2(286, 225)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ha33c")
+animation = &"Idle"
+frame = 2
+frame_progress = 0.357389
+speed_scale = 0.5
+flip_h = true
+script = ExtResource("15_f1sis")
+animatedSprite = NodePath(".")
+animationSpeed = 2.0
+
+[node name="tadpole2" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("animatedSprite")]
+position = Vector2(954, 225)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ha33c")
+animation = &"Idle"
+frame = 2
+frame_progress = 0.357389
+speed_scale = 0.5
+script = ExtResource("15_f1sis")
+animatedSprite = NodePath(".")
+animationSpeed = 1.0
+
+[node name="TimeManager" type="Node2D" parent="."]
+visible = false
+script = ExtResource("13_vvcre")
+
+[node name="gametimetext" type="Label" parent="TimeManager"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 63.0
+offset_top = 593.0
+offset_right = 294.0
+offset_bottom = 709.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_djbve")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 419.0
+offset_top = 64.0
+offset_right = 861.0
+offset_bottom = 224.0
+text = "infinite 
+evolution"
+label_settings = ExtResource("17_kjajn")
+horizontal_alignment = 1
+vertical_alignment = 1

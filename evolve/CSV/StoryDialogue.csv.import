@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ddu3d6s720xvr"
+
+[deps]
+
+files=["res://CSV/StoryDialogue.Type.translation", "res://CSV/StoryDialogue.Character.translation", "res://CSV/StoryDialogue.Portrait.translation", "res://CSV/StoryDialogue.Dialogue.translation", "res://CSV/StoryDialogue.Condition.translation", "res://CSV/StoryDialogue.Next ID.translation", "res://CSV/StoryDialogue.If True Next ID.translation", "res://CSV/StoryDialogue.If False Next ID.translation", "res://CSV/StoryDialogue.SFX.translation", "res://CSV/StoryDialogue.BGM.translation", "res://CSV/StoryDialogue.Animation.translation"]
+
+source_file="res://CSV/StoryDialogue.csv"
+dest_files=["res://CSV/StoryDialogue.Type.translation", "res://CSV/StoryDialogue.Character.translation", "res://CSV/StoryDialogue.Portrait.translation", "res://CSV/StoryDialogue.Dialogue.translation", "res://CSV/StoryDialogue.Condition.translation", "res://CSV/StoryDialogue.Next ID.translation", "res://CSV/StoryDialogue.If True Next ID.translation", "res://CSV/StoryDialogue.If False Next ID.translation", "res://CSV/StoryDialogue.SFX.translation", "res://CSV/StoryDialogue.BGM.translation", "res://CSV/StoryDialogue.Animation.translation"]
+
+[params]
+
+compress=true
+delimiter=0

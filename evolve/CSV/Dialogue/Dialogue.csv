@@ -1,0 +1,7 @@
+ID,Type,Character,Portrait,Dialogue,Condition,NextID,NextID_True,NextID_False,Background,SFX,BGM,EffectScene
+100,TEXT,???,,조금만더...,,1,-1,-1,classroom.png,,,
+101,TEXT,???,,나는 밖에서 들어오고 있는 무언가를 향해 바라고 있었다.,,2,-1,-1,,,,
+102,TEXT,???,,좋았어..,,3,-1,-1,,,,
+103,TEXT,???,,"그것은 나에게 다가와 졸음의 손길로 다가가게 하고 있었다.
+역시 오후에 교실로 들어오는 햇빛은 따듯하여 기분이 좋았다.",,4,-1,-1,,,,
+104,TEXT,???,,십분 밖에 없는 이 귀중한 시간을 만끽하고 싶었지만 아무래도 그럴 여유는 없는 것 같다.,,5,-1,-1,,,,
